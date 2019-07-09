@@ -7,7 +7,7 @@ import (
 
 func TestConfig(t *testing.T) {
 	config := NewConfig()
-	config.loadConfig("./config.ini")
+	config.LoadConfig("./config.ini")
 	value := config.GetConfig("server")
 	fmt.Println(value)
 }

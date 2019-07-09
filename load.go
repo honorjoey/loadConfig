@@ -11,7 +11,7 @@ func NewConfig() *Config {
 	return config
 }
 
-func (c *Config) loadConfig(filename string)  {
+func (c *Config) LoadConfig(filename string)  {
 	c.config = readConfig(filename)
 }
 
