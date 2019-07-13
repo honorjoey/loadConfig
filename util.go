@@ -36,6 +36,9 @@ func readConfig(filename string) *map[string]string {
 		if strings.Contains(v, "#") {
 			continue
 		}
+		if len(v) == 0 {
+			continue
+		}
 		config := strings.Split(v, "=")
 		ConfigMap[config[0]] = config[1]
 	}

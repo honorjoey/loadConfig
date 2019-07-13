@@ -9,5 +9,6 @@ func TestConfig(t *testing.T) {
 	config := NewConfig()
 	config.LoadConfig("./config.ini")
 	value := config.GetConfig("server")
-	fmt.Println(value)
+	host := config.GetConfig("host")
+	fmt.Println(value, host)
 }
