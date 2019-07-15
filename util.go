@@ -19,7 +19,14 @@ func ReadFile(filename string) (*[]string, error) {
 		log.Println("read the file failed!")
 		return nil, err
 	}
-	slice := strings.Split(string(buf), "\n")
+	var bytes []byte
+	for i, v := range buf {
+		if v == 0 {
+			bytes = buf[:i]
+			break
+		}
+	}
+	slice := strings.Split(string(bytes), "\n")
 
 	return &slice, nil
 }
